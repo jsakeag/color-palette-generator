@@ -108,6 +108,7 @@ button {
 	text-align: center;
 }
 
+/*changing layout based on screen size*/
 @media (min-width: 768px) {
 	.colours {
 		grid-template-columns: repeat(2, 1fr);
