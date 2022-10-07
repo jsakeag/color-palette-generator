@@ -65,11 +65,23 @@ const generateHex = () => {
   return color;
 };
 
+/*
+ * hslToHex(): https://stackoverflow.com/questions/36721830/convert-hsl-to-rgb-and-hex
+ * hexToHsl(): https://gist.github.com/xenozauros/f6e185c8de2a04cdfecf
+ * make addHue() function
+*/
+
 //currently editing algorithm to use color theory
 const generateHexes = () => {
   hexes = [];
-  for (let i = 0; i < colour_elements.length; i++) {
-    hexes.push(generateHex());
+  hexes.push(generateHex());
+  //complementary
+  for (let i = 1; i < colour_elements.length; i++) {
+    //let plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+    //let hueDiff = plusOrMinus * (Math.floor(Math.random() * 3) + 41)
+    let hex = hexToHsl(hexes[0])
+    hex['h'] += hueDiff;
+    hexes.push(hex);
   }
 };
 
